@@ -1,10 +1,10 @@
 package com.baumotte.servicebroker.endpoints;
 
-import javax.websocket.server.PathParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -25,8 +25,8 @@ public class BrokerEP {
 	@GET
 	@Consumes(MediaType.TEXT_PLAIN)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getService(/*@PathParam("name") String name*/) {
-		return Response.status(Response.Status.OK).entity(services.getService("dbconnector_ticketing")).build();
+	public Response getService(@QueryParam("name") String name) {
+		return Response.status(Response.Status.OK).entity(services.getService(name)).build();
 	}
 
 }
