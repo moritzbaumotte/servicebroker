@@ -17,8 +17,8 @@ public class BrokerEP {
 	
 	public BrokerEP() {
 		this.services = new ServiceList();
-		services.addService(new Service("http://localhost:8080/ticketing/rest/tickets", "ticketing_tickets"));
-		services.addService(new Service("http://localhost:8080/dbconnector/rest/queries/ticketing", "dbconnector_ticketing"));
+		services.addService(new Service("http://localhost:8081/ticketing/rest/tickets", "ticketing_tickets"));
+		services.addService(new Service("http://localhost:8081/dbconnector/rest/queries/ticketing", "dbconnector_ticketing"));
 	}
 	
 	@GET
